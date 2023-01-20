@@ -1,0 +1,132 @@
+.hero-main {
+  &__title {
+    margin-bottom: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.1;
+    text-transform: uppercase;
+
+    span {
+      color: $orange;
+      font-size: 85px;
+      line-height: 1.1;
+      display: block;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid $orange;
+  }
+
+  &__list {
+    margin-top: -20px;
+  }
+
+  &__item {
+    padding-left: 25px;
+    color: $orange;
+    font-size: 30px;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &:before {
+      top: 18px;
+      left: -8px;
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      background: $orange;
+      border-radius: 50%;
+    }
+  }
+
+  &__order-expertise {
+    margin-left: 115px;
+    padding: 30px 75px;
+    font-size: 25px;
+    text-transform: uppercase;
+    align-self: start;
+    position: relative;
+    background: $orange;
+    transform: translateY(50%);
+    border-radius: 100px;
+    transition: .25s background;
+
+    &:hover {
+      background: #{$orange}90;
+    }
+
+    &:before {
+      pointer-events: none;
+      top: 50%;
+      left: 0;
+      content: '';
+      width: 117px;
+      height: 2px;
+      position: absolute;
+      background: $orange;
+      transform: translate(-117px, -50%);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    &__title {
+      font-size: 23px;
+
+      span {
+        font-size: 55px;
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &__order-expertise {
+      margin-left: 50px;
+      padding: 20px 60px;
+
+      &:before {
+        width: 52px;
+        transform: translateX(-52px);
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__title {
+      font-size: 18px;
+
+      span {
+        font-size: 30px;
+      }
+    }
+
+    &__item {
+      font-size: 27px;
+
+      &:not(:last-child) {
+        margin-bottom: unset;
+      }
+    }
+
+
+    &__order-expertise {
+      margin-left: 12px;
+      padding: 15px 30px;
+      font-size: 20px;
+
+      &:before {
+        width: 12px;
+        transform: translateX(-12px);
+      }
+    }
+  }
+}

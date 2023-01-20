@@ -1,0 +1,42 @@
+/* Миксины */
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url('../fonts/#{$file_name}.woff') format('woff'), url('../fonts/#{$file_name}.woff2') format('woff2'), url('../fonts/#{$file_name}.ttf') format('ttf'), url('../fonts/#{$file_name}.eot') format('eot');
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+@import 'fonts';
+
+/* Переменные */
+@import 'vars';
+
+/* Сброс стилей */
+@import 'reset';
+
+/* Общие стили */
+body {
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 1408px;
+}
+
+/* Header */
+@import 'blocks/header';
+
+/* Hero */
+@import 'blocks/hero/hero';
+@import 'blocks/hero/hero-main';
+
+/* Expertise */
+@import 'blocks/expertise/expertise';
+@import 'blocks/expertise/expertise-form';
